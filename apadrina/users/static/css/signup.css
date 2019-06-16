@@ -1,0 +1,45 @@
+*{
+    font-family: 'Rubik', sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    background: #FFFFFF;
+    height: 95vh;
+}
+
+form{
+    border-radius: 20px;
+    background: #FED480;
+    width: 600px;
+    font-size: 14px;
+    padding: 20px;
+}
+
+form p{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+}
+
+form p label{
+    margin-bottom: 2px;
+}
+
+form p input{
+    max-width: 350px;
+}
+
+form p select{
+    max-width: 150px;
+}
+
+.btn{
+    margin-top: 10px;
+    float: right;
+}
+
