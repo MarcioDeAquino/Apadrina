@@ -1,13 +1,30 @@
+{% load static %}
+
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <title> APADARINA </title>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'css/basic.css' %}">
+        <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
     </head>
 
     <body>
-        chegou aqui
+        <nav class="navbar navbar-light bg-light" id="header">
+            <a class="navbar-brand" href="#">APADARINA</a>
+            <div id="person">
+                <button class="btn btn-secondary" id="createNew" type="submit">Você tem um projeto pra colocar no forno?</button>
+                Oi, <a href="#">Lilian</a>
+            </div>  
+        </nav>
+
+        <div id="content">
+            <h1 id="calling">Que projeto você quer ajudar uma mina a tirar do forno?</h1>
+            <div id="cards">{% include 'cards.html' %}</div>
+        </div>
     </body>
 </html>
 
