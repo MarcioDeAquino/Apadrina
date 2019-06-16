@@ -17,9 +17,13 @@ class Project(models.Model):
     
     
 class Vacancy(models.Model):
-    name = models.CharField(max_length=30)
     project = models.ForeignKey(Project, related_name='vagas', on_delete=models.CASCADE)
-    how_can_help = models.CharField(max_length=100)
+    HELP = (
+        ('Dev', 'Desenvolvedora'),
+        ('Des', 'Designer'),
+        ('Out', 'Outro')
+    ) 
+    how_help = models.CharField(max_length=2, choices=HELP)  
     colab =  models.ForeignKey('users.User',  on_delete=models.CASCADE, blank=True, null=True)
 
     def __str__(self):

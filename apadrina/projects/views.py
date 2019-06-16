@@ -30,8 +30,11 @@ class criar(FormView):
 
 def teste(request, id):
     print(id)
+
+    print([f.name for f in Project._meta.get_fields()])
     project = Project()
-    print(project.local)
+    teste = Project.objects.get(id=1)
+    print(teste)
     return HttpResponse(project)
 
 
