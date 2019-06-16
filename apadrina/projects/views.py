@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.generic.edit import FormView
+from django.views.generic.list import ListView
 from .forms import *
 from .models import Project
 
@@ -8,6 +9,10 @@ from .models import Project
 def home(request):
     return render(request, 'base.html')
 # Create your views here.
+
+class projects(ListView):
+    model = Project
+    template_name= 'base.html'
 
 
 class criar(FormView):
@@ -19,9 +24,9 @@ class criar(FormView):
 
         user = self.request.user
         project = Project()
-        project.description = form.cleaned_data['description']
+        project.description = form.cleaned_data['escopo']
         project.local = form.cleaned_data['local']
-        project.name = form.cleaned_data['name']
+        project.name = form.cleaned_data['nome']
         project.author = user
 
         project.save()
